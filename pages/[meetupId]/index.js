@@ -31,7 +31,7 @@ export async function getStaticPaths() {
   const meetupsCollection = db.collection("meetups");
   //fetching id of each document and store into an array
   const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
-  client.close();
+  // client.close();
 
   return {
     fallback: false,
@@ -58,7 +58,7 @@ export async function getStaticProps(context) {
     _id: new ObjectId(meetupId),
   });
   // console.log(selectedMeetup);
-  client.close();
+  // client.close();
 
   return {
     props: {
